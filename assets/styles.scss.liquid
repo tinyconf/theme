@@ -9,7 +9,6 @@ body {
   justify-content: center;
   background: $background-color url(bg-pattern.svg) repeat center center;
   margin: 1em;
-  // align-items: center;
 }
 
 img {
@@ -21,7 +20,7 @@ img {
   margin: 0 auto;
   text-align: center;
   font-size: 22px;
-  font-family: 'Gotham', 'Helvetica Neue';
+  font-family: 'Gotham-Medium', 'Helvetica Neue';
   text-transform: uppercase;
   position: relative;
   background: #fff;
@@ -167,6 +166,10 @@ $degrees: 5deg;
   }
 }
 
+@keyframes bgmove {
+  0% { background-position: center 0; }
+  100% { background-position: center 400px; }
+}
 
 .flip-container {
   perspective: 1000;
@@ -230,4 +233,20 @@ $degrees: 5deg;
 .lower {
   text-transform: none;
   padding: 0 2em;
+}
+
+button:focus {
+  outline: none;
+}
+
+$font-path: 'Gotham-Medium';
+
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url("{{ 'Gotham-Medium.eot' | asset_url }}?#iefix") format('embedded-opentype'),
+       url("{{ 'Gotham-Medium.woff' | asset_url }}") format('woff'),
+       url("{{ 'Gotham-Medium.ttf' | asset_url }}") format('truetype'),
+       url("{{ 'Gotham-Medium.svg' | asset_url }}#Gotham") format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
