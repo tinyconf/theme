@@ -21,7 +21,7 @@ img {
   margin: 0 auto;
   text-align: center;
   font-size: 22px;
-  font-family: 'Gotham', system, -apple-system, ".SFNSDisplay-Regular", 'Helvetica Neue';
+  font-family: 'Gotham', 'Helvetica Neue';
   text-transform: uppercase;
   position: relative;
   background: #fff;
@@ -31,8 +31,15 @@ img {
   // }
 
   @media (min-width: 630px) {
+    // animation: 5s rotate2 ease-in-out;
     // animation: 7s rotate alternate infinite ease-in-out;
     transform-origin: 50% -10%;
+  }
+}
+
+.badge--front {
+  @media (min-width: 630px) {
+    animation: 6s rotate2 ease-in-out;
   }
 }
 
@@ -145,6 +152,21 @@ $degrees: 5deg;
   }
 }
 
+@keyframes rotate2 {
+  0% {
+
+  }
+  33% {
+    transform: rotate(-$degrees);
+  }
+  66% {
+    transform: rotate($degrees);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 
 .flip-container {
   perspective: 1000;
@@ -197,7 +219,6 @@ $degrees: 5deg;
 }
 
 .badge-section--thank-you {
-
   flex-grow: 2 !important;
 }
 
