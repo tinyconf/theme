@@ -3,7 +3,10 @@
     var $form = $('#newsletter');
 
     $form.submit(function() {
-      if ($form.find('input[name="EMAIL"]').val().indexOf('@') == -1) {
+      var $emailField = $form.find('input[name="EMAIL"]');
+
+      if ($emailField.val().indexOf('@') == -1) {
+        $emailField.focus();
         return false;
       }
 
