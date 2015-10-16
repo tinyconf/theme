@@ -2,11 +2,11 @@
   $(document).ready(function() {
     var $form = $('#newsletter');
 
-    if ($form.find('input[name="EMAIL"]').val().indexOf('@') == -1) {
-      return false;
-    }
-
     $form.submit(function() {
+      if ($form.find('input[name="EMAIL"]').val().indexOf('@') == -1) {
+        return false;
+      }
+
       $.ajax({
         url: $form.attr('action'),
         type: 'GET',
