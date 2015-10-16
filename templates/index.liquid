@@ -1,3 +1,26 @@
+<script>
+  $(document).ready(function() {
+    var $form = $('#newsletter');
+
+    if ($form.find('input[name="EMAIL"]').val().indexOf('@') == -1) {
+      return false;
+    }
+
+    $form.submit(function() {
+      $.ajax({
+        url: $form.attr('action'),
+        type: 'GET',
+        data: $form.serialize(),
+        dataType: 'jsonp'
+      });
+
+      $('body').addClass('flip');
+
+      return false;
+    });
+  });
+</script>
+
 <div class="flip-container">
   <div class="flipper">
       <div class="badge badge--front">
@@ -26,5 +49,5 @@
         </div>
       </div>
     </div>
-    </div>
   </div>
+</div>
