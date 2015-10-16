@@ -1,0 +1,114 @@
+$black: #333;
+$border: 5px solid $black;
+$padding: 1em;
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+.badge {
+  border: $border;
+  max-width: 475px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 22px;
+  font-family: 'Gotham';
+  text-transform: uppercase;
+  position: relative;
+}
+
+.badge:before {
+  content: "";
+  display: inline-block;
+  width: 4em;
+  border: $border;
+  margin-top: 1.5em;
+  height: .5em
+}
+
+.badge:after {
+  content: "";
+  background: $black;
+  position: absolute;
+  bottom: 100%;
+  height: 200px;
+  width: 3.5em;
+  margin-bottom: -2.4em;
+  left: 50%;
+  margin-left: - 3.5em / 2;
+}
+
+.badge-section {
+  padding: $padding;
+
+  & + & {
+    border-top: $border;
+  }
+}
+
+.badge-section--logo {
+  padding: 2em;
+}
+
+.badge-section--meta {
+  padding: 0;
+
+  @media (min-width: 490px) {
+    display: flex;
+  }
+}
+
+.badge-section__half {
+  padding: $padding;
+  box-sizing: border-box;
+
+  @media (max-width: 490px) {
+    & + & {
+      border-top: $border;
+    }
+  }
+
+  @media (min-width: 490px) {
+    width: 50%;
+
+    & + & {
+      border-left: $border;
+    }
+  }
+}
+
+.badge-section--description {
+  background: $black;
+  color: #fff;
+}
+
+.badge-section--newsletter {
+  display: flex;
+}
+
+.field {
+  border: none;
+  flex-grow: 1;
+  width: 100%;
+  font-size: 17px;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
